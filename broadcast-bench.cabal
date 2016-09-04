@@ -1,0 +1,33 @@
+name:                broadcast-bench
+version:             0.1.0.0
+synopsis:            Simple project template from stack
+description:         Please see README.md
+homepage:            https://github.com/githubuser/broadcast-bench#readme
+license:             BSD3
+license-file:        LICENSE
+author:              Author name here
+maintainer:          example@example.com
+copyright:           2016 Author name here
+category:            Web
+build-type:          Simple
+cabal-version:       >=1.10
+
+executable broadcast
+  ghc-options:         -Wall -O2 -threaded
+  hs-source-dirs:      src
+  main-is:             Main.hs
+  default-language:    Haskell2010
+  build-depends:       base
+                     , async
+                     , unagi-chan
+
+benchmark broadcast-bench
+  type:                exitcode-stdio-1.0
+  ghc-options:         -Wall -O2 -threaded -rtsopts -with-rtsopts=-N
+  hs-source-dirs:      bench
+  main-is:             Main.hs
+  default-language:    Haskell2010
+  build-depends:       base
+                     , async
+                     , criterion
+                     , unagi-chan
